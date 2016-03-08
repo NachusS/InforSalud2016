@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>ML-dHPa Algoritmo Inteligente predecir Colapso en Urgencias.</title>
+		<title>ML-dHPa Predicción Inteligente de la Saturación Urgencias Hospitalarias.</title>
 
 		<meta name="description" content="Machine Learning dHPa">
 		<meta name="author" content="Ignacio Martinez Soriano">
@@ -57,10 +57,10 @@ Urgencias Hospitalarias</p>
 					<h2>Definición del problema.</h2>
                     <br>
 					<p>
-				     En las Urgencias Hospitalarias, la acumulación de pacientes puede llevar a un estado de saturacion pudiendo provocar un colapso del servicio.
+				     En las Urgencias Hospitalarias, la acumulación de pacientes puede llevar a un estado de saturacion pudiendo provocar un <strong>"Valor Crítico"</strong> generando un colapso del servicio.
 					</p>
                     <br>
-                    <p>Queremos aplicar técnicas de I.A. en concreto, Machine Learning, para intentar predecir el <strong>grado de Saturación</strong> en Urgencias. Siempre que no ocurra alguna catástrofe.</p>
+                    <p>Queremos aplicar técnicas de I.A. en concreto, <strong>Machine Learning</strong>, para intentar predecir el <strong>grado de Saturación</strong> en Urgencias. Siempre que no ocurra alguna catástrofe.</p>
                     </section>    
 
                     
@@ -80,7 +80,7 @@ Urgencias Hospitalarias</p>
                     </section>
                     <section>
                         <h2>Algoritmo de Clasificación</h2>
-                        <p>Sobre un conjunto de datos conocidos, predice una clasificacion binaria (o/1)  </p>
+                        <p>Sobre un conjunto de datos conocidos, predice una clasificacion o agrupación binaria (Crea dos grupos)  </p>
 						<p>Permite clasificar en dos grupos, un conjunto de datos, según unos valores iniciales. Se utilizan unas caracteristicas, que identifican el valor de la agrupacion.</p>
 				    </section>                  
 					<section>
@@ -100,7 +100,7 @@ Urgencias Hospitalarias</p>
                         <p><strong>Saturación</strong></p>
                         <ul>
                             <li>Normal</li>
-                            <li>Colapso</li>
+                            <li>Valor Crítico</li>
                         </ul>
                     </section>
 
@@ -115,8 +115,13 @@ Urgencias Hospitalarias</p>
                     <section>
                         <h2>Proceso en Azure-ML:</h2>
                         <p>Crear el Data Set:</p>
-                        <img src="img/ML-Trained-00.png">
+                        <img width="700" height="500" src="img/ML-Trained-00.png">
                     </section>
+                    <section>
+                        <h2>Utilizamos los siguientes datos iniciales:</h2>
+                        <p>Data Set Inicial:</p>
+                        <img src="img/DatosIniciales.png">
+                    </section>                    
                     <section>
                         <p>Preparar dos grupos del Data-Set. Uno para Entrenamiento 80% y otro para Evaluación 20%:</p>
                         <img src="img/ML-Split.png">

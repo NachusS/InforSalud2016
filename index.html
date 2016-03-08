@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ML-dHPa Algoritmo Inteligente predecir Colapso en Urgencias.</title>
+
+		<meta name="description" content="Machine Learning dHPa">
+		<meta name="author" content="Ignacio Martinez Soriano">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>ML-dHPa</h1>
+                    <p>Machine Learning-DHPA. Predicción Inteligente de la Saturación Pacientes en
+Urgencias Hospitalarias</p>
+                    
+                    <img width="300" height="300" src="img/qr_img.png" >
+                    
+					<p>
+						<small>Creado por <a href="https://www.linkedin.com/in/imsoriano/">Ignacio.Martinez@carm.es</a> / <a href="http://twitter.com/coloratto67">@coloratto67</a></small>
+					</p>
+				</section>
+
+				<section>
+                    <section>
+					<h2>Definición del problema.</h2>
+                    <br>
+					<p>
+				     En las Urgencias Hospitalarias, la acumulación de pacientes puede llevar a un estado de saturacion pudiendo provocar un colapso del servicio.
+					</p>
+                    <br>
+                    <p>Queremos aplicar técnicas de I.A. en concreto, Machine Learning, para intentar predecir el <strong>grado de Saturación</strong> en Urgencias. Siempre que no ocurra alguna catástrofe.</p>
+                    </section>    
+
+                    
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+                        <h3>Machine Learning</h3>
+                        <p>Sistema de aprendizaje basado en la experiencia.</p>
+                        <p>Se divide en dos categorias:</p>
+                        <ol>
+                            <li>Aprendizaje supervisado</li>
+                            <li>Aprendizaje no supervisado</li>
+                        </ol>
+                        <p>Dentro del Aprendizaje supervisado, vamos a utilizar un <strong>algoritmo de Clasificación</strong></p>
+                    </section>
+                    <section>
+                        <h2>Algoritmo de Clasificación</h2>
+                        <p>Sobre un conjunto de datos conocidos, predice una clasificacion binaria (o/1)  </p>
+						<p>Permite clasificar en dos grupos, un conjunto de datos, según unos valores iniciales. Se utilizan unas caracteristicas, que identifican el valor de la agrupacion.</p>
+				    </section>                  
+					<section>
+                        <h2>Caracteristicas iniciales:</h2>
+                        <p>Para nuestro problema hemos identificado los siguientes valores:</p>
+                        <ol>
+                            <li>Indicador <strong>dHPa</strong> <small>Densidad Horaria Pacientes Acumulados.</small></li>
+                            <li>Entrada pacientes a la hora.</li>
+                            <li>Altas de Pacientes a la Hora.</li>
+                            <li>Recursos ocupados en Urgencias. Camas Observacion.</li>
+                            <li>Facultativos trabajando a la Hora.</li>
+                            <li>Camas libres de Hospitalización.</li>
+                        </ol>				
+					</section>
+                    <section>
+                        <h2>Etiqueta agrupación:</h2>
+                        <p><strong>Saturación</strong></p>
+                        <ul>
+                            <li>Normal</li>
+                            <li>Colapso</li>
+                        </ul>
+                    </section>
+
+				</section>
+
+				<section>
+                    <section>
+					   <h3>Metodología y Herramientas(AzureML):</h3>   
+                        <h4>Creacion del Modelo:</h4>
+					   <img src="img/FasesModelo.png">
+                    </section>    
+                    <section>
+                        <h2>Proceso en Azure-ML:</h2>
+                        <p>Crear el Data Set:</p>
+                        <img src="img/ML-Trained-00.png">
+                    </section>
+                    <section>
+                        <p>Preparar dos grupos del Data-Set. Uno para Entrenamiento 80% y otro para Evaluación 20%:</p>
+                        <img src="img/ML-Split.png">
+                    </section>
+                    <section>    
+                        <p>Elegir el Algoritmo de Clasificación Y Entrenamos.</p>
+                        <img src="img/ML-Trained-02.png">
+                    </section>
+                    <section>    
+                        <p>Elegir módulo de Evaluación.</p>
+                        <img src="img/ML-Trained-04.png">
+                     </section>
+                    <section>     
+		                  <p>Valores del Módulo de evaluación.</p>
+                            <img src="img/ML-Trained-05.png">
+				    </section>
+                    
+                </section>
+
+
+				<section>
+					<h2>Producción del Modelo Generado</h2>
+					<ol>
+						<li>Alimentacion diaria de datos, franja horaria.</li>
+						<li>Aplicar Modelo de Producción</li>
+						<li>Generar Alerta. En caso de <em>Colapso</em></li>
+                        <li>Observar los valores de las Características</li>
+                        <li>Según valores obtenidos que actuaciones debemos realizar para solucionar el colapso.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1>Conclusiones</h1>
+                    <h2>Además de crear un algoritmo predictivo hay que desarrollar un algoritmo prescriptivo</h2>
+				</section>
+				<section>
+					<h1>The End</h1>
+                    <h2>Si desea puede valorar la presentación pinchando en este enlace:</h2>
+                    <a href="http://goo.gl/forms/K1WWpfcJHY">Valoración Presentación</a>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

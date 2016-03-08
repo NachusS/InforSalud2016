@@ -143,14 +143,31 @@ Urgencias Hospitalarias</p>
 
 
 				<section>
-					<h2>Producción del Modelo Generado</h2>
-					<ol>
-						<li>Alimentacion diaria de datos, franja horaria.</li>
-						<li>Aplicar Modelo de Producción</li>
-						<li>Generar Alerta. En caso de <em>Colapso</em></li>
-                        <li>Observar los valores de las Características</li>
-                        <li>Según valores obtenidos que actuaciones debemos realizar para solucionar el colapso.</li>
-					</ol>
+                    <section>
+                        <h2>Modelo Producción Final</h2>
+                        <p>El Modelo Final, cambia ya que los datos no los utilizamos del DataSet, sino que se van a ir alimentando automaticamente.</p>
+                        <img width="400" height="400" src="img/ML-PredictivoModel.png">
+                    </section>                    
+                    <section>
+                        <h2>API-Web Service</h2>
+                        <p>Creamos los Web Services, para utilizar una API que nos proporciona la puesta en producción</p>
+                        <img src="img/ML-API-Generada.png">
+                    </section>
+                    <section>
+                        <h2>Aplicación en Producción</h2>
+                        <p>Utilizamos, las key-API y el formato que se descarga, inicialmente para probar el funcionamiento.</p>
+                        <img src="img/ML-ProduccionFinal.png">
+                    </section>                        
+                    <section>
+					   <h2>Aplicación e implementación Final</h2>
+					   <ol>
+						  <li>Alimentacion diaria de datos, franja horaria.</li>
+						  <li>Aplicar Modelo de Producción</li>
+						  <li>Generar Alerta. En caso de <strong>Valor Crítico</strong>, Colapso</li>
+                          <li>Observar los valores de las Características</li>
+                          <li>Según valores obtenidos que actuaciones debemos realizar para solucionar el Valor crítico.</li>
+					   </ol>
+                    </section>    
 				</section>
 
 				<section>
